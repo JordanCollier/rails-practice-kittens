@@ -8,6 +8,7 @@ class CategorizationsController < ApplicationController
   def create
     @categorization = Categorization.new(categorization_params)
     @categorization.kitten_id = params[:kitten_id]
+    @kitten = Kitten.find(params[:kitten_id])
     if @categorization.save
       redirect_to root_path
     else

@@ -1,5 +1,10 @@
 %h1 Categorize
-
+- if @categorization.errors.any?
+  .alert
+    %ul
+      - @categorization.errors.full_messages.each do |msg|
+        %li
+          = msg
 = image_tag @kitten.image
 = form_for [@kitten, @categorization] do |f|
   = f.collection_select :category_id, Category.all, :id, :name
