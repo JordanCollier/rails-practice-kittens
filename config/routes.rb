@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   get "/categories" => "categories#index", as: :categories
 
   resources :kittens, only: [] do
-    resources :categorizations, only: [:new]
+    resources :categorizations, only: [:new, :create]
   end
 end

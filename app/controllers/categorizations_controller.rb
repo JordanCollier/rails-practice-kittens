@@ -2,6 +2,7 @@ class CategorizationsController < ApplicationController
 
   def new
     @categorization = Categorization.new
+    @kitten = Kitten.find(params[:kitten_id])
   end
 
   def create
