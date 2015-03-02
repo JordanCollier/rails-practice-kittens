@@ -1,8 +1,11 @@
 <div class="kitten">
+  <%= link_to new_kitten_categorization_path(kitten) do %>
   <%= image_tag kitten.image %>
+  <% end %>
   <% kitten.categories.each do |category| %>
     <div class="kitten-caption">
       <%= category.name %>
     </div>
   <% end %>
+
 </div>
