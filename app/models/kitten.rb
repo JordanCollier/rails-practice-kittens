@@ -1,5 +1,5 @@
 class Kitten < ActiveRecord::Base
 
   validates :image, presence: true
-  belongs_to :kitten, through: :categorization
+  has_many :categories, through: :categorization
 end
